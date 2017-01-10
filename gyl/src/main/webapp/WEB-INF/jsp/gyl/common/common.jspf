@@ -1,0 +1,9 @@
+<%@ taglib uri="/struts-tags" prefix="s"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="proPath" value="${pageContext.request.contextPath }"/>
+<link type="text/css" rel="stylesheet" href="${proPath}/css/blue/pageCommon.css"/>
+<link type="text/css" rel="stylesheet" href="${proPath}/css/style.css"/>
+<script src="${proPath}/js/jquery-3.1.1.js"></script>
+<script src="${proPath }/js/jquery-plugin-delete.js"></script>
+<script src="${proPath }/js/jquery-plugin-update.js"></script>
+<script src="${proPath}/js/GylUtils.js"></script>

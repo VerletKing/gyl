@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.ui.theme" value="simple"></constant>
+	<constant name="struts.devMode" value="true"/>
+	
+	<!-- 基础数据模块 -->
+	<include file="com/gyl/struts/baseData/struts-department.xml"></include>
+	<include file="com/gyl/struts/baseData/struts-user.xml"></include>
+	
+	<!-- 权限模块 -->
+	<include file="com/gyl/struts/privilege/struts-menuitem.xml"></include>
+	<include file="com/gyl/struts/privilege/struts-role.xml"></include>
+	
+	<!-- 转发 -->
+	<include file="com/gyl/struts/forward/struts-forward.xml"></include>
+</struts>

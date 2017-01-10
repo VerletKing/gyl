@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.gyl.domain.privilege" auto-import="true">
+	<class name="Role" table="role">
+		<id name="rid" column="rid">
+			<generator class="increment"/>
+		</id>
+		<property name="pid" column="pid" length="5" type="java.lang.Long"/>
+		<property name="name" column="name" length="20" type="java.lang.String"/>
+		<property name="isParent" column="is_parent" type="java.lang.Boolean"/>
+		<set name="users" table="user_role">
+			<key column="rid"/>
+			<many-to-many column="uid" class="com.gyl.domain.baseData.User"/>
+		</set>
+	</class>
+</hibernate-mapping>

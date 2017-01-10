@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.gyl.domain.baseData" auto-import="true">
+	<class name="User" table="user">
+		<id name="uid" column="uid">
+			<generator class="increment"/>
+		</id>
+		<property name="email" column="email" length="20" type="java.lang.String"/>
+		<property name="password" column="password" length="8" type="java.lang.String"/>
+		<property name="phone" column="phone" length="11" type="java.lang.String"/>
+		<property name="sex" column="sex" length="2" type="java.lang.String"/>
+		<property name="userName" column="user_name" length="20" type="java.lang.String"/>
+		<many-to-one name="department" column="department_id" class="Department"  cascade="none"/>
+		<set name="roles" table="user_role">
+			<key column="uid"/>
+			<many-to-many class="com.gyl.domain.privilege.Role" column="rid"/>
+		</set>
+	</class>
+</hibernate-mapping>

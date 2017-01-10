@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="User" namespace="/" extends="struts-default">
+		<action name="userAction_*" class="userAction" method="{1}">
+			<result name="listUI">/WEB-INF/jsp/gyl/baseData/user/list.jsp</result>
+			<result name="addUI">/WEB-INF/jsp/gyl/baseData/user/add.jsp</result>
+			<result name="updateUI">/WEB-INF/jsp/gyl/baseData/user/update.jsp</result>
+			<result name="action2Action" type="redirectAction">
+				<param name="actionName">userAction_showPageResult</param>
+				<param name="baseQuery.currenPage">${baseQuery.currenPage}</param>
+			</result>
+		</action>
+	</package>
+</struts>
