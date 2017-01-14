@@ -1,6 +1,7 @@
 package com.gyl.privilege.dao.impl;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
@@ -17,7 +18,7 @@ public class RoleDaoImpl extends BaseDaoImple<Role> implements RoleDao{
 
 	@Override
 	public Role getRoleByName(final String name){
-		return hibernateTemplate.execute(new HibernateCallback<Role>(){
+		return this.getHibernateTemplate().execute(new HibernateCallback<Role>(){
 
 			@Override
 			public Role doInHibernate(Session session) throws HibernateException, SQLException {
@@ -28,6 +29,21 @@ public class RoleDaoImpl extends BaseDaoImple<Role> implements RoleDao{
 			
 		});
 		
+	}
+
+	@Override
+	public List<Role> getRoleByUid(Long uid) {
+		List<Role> allRole = this.find();
+		List<Role> roles = this.getHibernateTemplate().find("from Role r inner join fetch r.users u where u.uid = ? ",uid);
+		for(Role role_b : roles){
+			for(Role role_a : allRole){
+				if(role_a.getRid().longValue() == role_b.getRid().longValue()){
+					role_a.setChecked(true);
+					break;
+				}
+			}
+		}
+		return allRole;
 	}
 
 }

@@ -6,7 +6,12 @@
 <struts>
 	<package name="role" namespace="/" extends="json-default">
 		<action name="roleAction_*" class="roleAction" method="{1}">
-			<result name="success" type="json"></result>
+			<result name="success" type="json"/>
+		</action>
+	</package>
+	<package name="role_privilege" namespace="/" extends="struts-default">
+		<action name="rolePrivilegeAction_*" class="roleAction" method="{1}">
+			<result name="listUI">/WEB-INF/jsp/gyl/privilege/role_privilege.jsp</result>
 		</action>
 	</package>
 </struts>

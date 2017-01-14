@@ -4,8 +4,9 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-	<package name="menuitem" namespace="/" extends="json-default">
-		<action name="menuitemAction_*" class="menuitemAction" method="{1}">
+	<package name="UserRole" namespace="/" extends="json-default,struts-default">
+		<action name="userRoleAction_*" class="userRoleAction" method="{1}">
+			<result name="listUI">/WEB-INF/jsp/gyl/privilege/user_role.jsp</result>
 			<result name="success" type="json"/>
 		</action>
 	</package>

@@ -15,5 +15,9 @@
 			<key column="rid"/>
 			<many-to-many column="uid" class="com.gyl.domain.baseData.User"/>
 		</set>
+		<set name="privileges" table="role_privilege">
+			<key column="rid"/>
+			<many-to-many column="id" class="com.gyl.domain.privilege.Privilege"/>
+		</set>
 	</class>
 </hibernate-mapping>

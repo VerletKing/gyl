@@ -14,6 +14,8 @@
 	<!-- 权限模块 -->
 	<include file="com/gyl/struts/privilege/struts-menuitem.xml"></include>
 	<include file="com/gyl/struts/privilege/struts-role.xml"></include>
+	<include file="com/gyl/struts/privilege/struts-privilege.xml"></include>
+	<include file="com/gyl/struts/privilege/struts-userRole.xml"></include>
 	
 	<!-- 转发 -->
 	<include file="com/gyl/struts/forward/struts-forward.xml"></include>

@@ -1,5 +1,7 @@
 package com.gyl.privilege.service.impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -24,6 +26,11 @@ public class RoleServiceImpl extends BaseServiceImpl<Role> implements RoleServic
 	@Override
 	public Role getRoleByName(String name) {
 		return roleDao.getRoleByName(name);
+	}
+
+	@Override
+	public List<Role> getRoleByUid(Long uid) {
+		return roleDao.getRoleByUid(uid);
 	}
 
 	

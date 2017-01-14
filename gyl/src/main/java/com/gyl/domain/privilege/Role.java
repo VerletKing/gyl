@@ -14,6 +14,9 @@ public class Role implements Serializable{
 	private String name;
 	private Boolean isParent;//是否为父节点
 	private Set<User> users;
+	private Set<Privilege> privileges;
+	private Boolean checked;
+	
 	public Long getRid() {
 		return rid;
 	}
@@ -43,5 +46,17 @@ public class Role implements Serializable{
 	}
 	public void setUsers(Set<User> users) {
 		this.users = users;
+	}
+	public Set<Privilege> getPrivileges() {
+		return privileges;
+	}
+	public void setPrivileges(Set<Privilege> privileges) {
+		this.privileges = privileges;
+	}
+	public Boolean getChecked() {
+		return checked;
+	}
+	public void setChecked(Boolean checked) {
+		this.checked = checked;
 	}
 }

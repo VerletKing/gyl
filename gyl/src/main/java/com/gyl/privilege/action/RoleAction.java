@@ -3,7 +3,6 @@ package com.gyl.privilege.action;
 import java.util.List;
 
 import javax.annotation.Resource;
-import javax.management.relation.RoleResult;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.context.annotation.Scope;
@@ -58,5 +57,11 @@ public class RoleAction extends BaseAction<Role>{
 		role.setName(this.getModel().getName());
 		roleService.update(role);
 		return SUCCESS;
+	}
+	
+	public String showRole(){
+		List<Role> list = roleService.find();
+		ActionContext.getContext().getContextMap().put("roles", list);
+		return listUI;
 	}
 }

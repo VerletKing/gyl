@@ -35,7 +35,7 @@ public class BaseDaoImple<T> implements BaseDao<T> {
 	}
 	
 	@Resource
-	public HibernateTemplate hibernateTemplate;
+	private HibernateTemplate hibernateTemplate;
 	
 	@PostConstruct
 	private void init(){
@@ -145,6 +145,10 @@ public class BaseDaoImple<T> implements BaseDao<T> {
 	@Override
 	public T getEntryById(Serializable id) {
 		return hibernateTemplate.get(clazz, id);
+	}
+
+	public HibernateTemplate getHibernateTemplate() {
+		return hibernateTemplate;
 	}
 
 }

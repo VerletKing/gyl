@@ -9,7 +9,7 @@ public class User implements Serializable{
 
 	private static final long serialVersionUID = -8054744108782076925L;
 	
-	private Integer uid;
+	private Long uid;
 	private String email;
 	private String password;
 	private String phone;
@@ -18,10 +18,10 @@ public class User implements Serializable{
 	private Department department;
 	private Set<Role> roles;
 	
-	public Integer getUid() {
+	public Long getUid() {
 		return uid;
 	}
-	public void setUid(Integer uid) {
+	public void setUid(Long uid) {
 		this.uid = uid;
 	}
 	public String getEmail() {
