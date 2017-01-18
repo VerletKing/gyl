@@ -19,4 +19,10 @@
 	
 	<!-- 转发 -->
 	<include file="com/gyl/struts/forward/struts-forward.xml"></include>
+	
+	<!-- 登录 -->
+	<include file="com/gyl/struts/login/struts-login.xml"></include>
+	
+	<!-- 拦截器 -->
+	<include file="com/gyl/struts/interceptior/struts-privilegeInterceptior.xml"></include>
 </struts>

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import com.gyl.base.action.BaseAction;
 import com.gyl.baseData.service.DepartmentService;
 import com.gyl.domain.baseData.Department;
+import com.gyl.privilege.annotation.PrivilegeInfo;
 import com.gyl.query.PageResult;
 import com.gyl.query.baseData.DepartmentQuery;
 import com.opensymphony.xwork2.ActionContext;
@@ -24,6 +25,7 @@ public class DepartmentAction extends BaseAction<Department> {
 	
 	private DepartmentQuery baseQuery = new DepartmentQuery();
 	
+	@PrivilegeInfo(name="部门查询")
 	public String showPageResult(){
 		PageResult<Department> pageResult = departmentService.findPageResult(baseQuery);
 		ActionContext.getContext().getContextMap().put("departments", pageResult);

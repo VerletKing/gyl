@@ -4,7 +4,7 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-	<package name="Department" namespace="/" extends="struts-default">
+	<package name="Department" namespace="/" extends="interceptior">
 		<action name="departmentAction_*" class="departmentAction" method="{1}">
 			<result name="listUI">/WEB-INF/jsp/gyl/baseData/department/list.jsp</result>
 			<result name="action2Action" type="redirectAction">

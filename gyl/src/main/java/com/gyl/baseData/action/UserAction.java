@@ -13,6 +13,7 @@ import com.gyl.baseData.service.DepartmentService;
 import com.gyl.baseData.service.UserService;
 import com.gyl.domain.baseData.Department;
 import com.gyl.domain.baseData.User;
+import com.gyl.privilege.annotation.PrivilegeInfo;
 import com.gyl.query.PageResult;
 import com.gyl.query.baseData.UserQuery;
 import com.opensymphony.xwork2.ActionContext;
@@ -31,7 +32,6 @@ public class UserAction extends BaseAction<User>{
 	private Long did;
 	private UserQuery baseQuery = new UserQuery();
 
-	
 	public String showPageResult(){
 		PageResult<User> pageResult = userService.findPageResult(baseQuery);
 		ActionContext.getContext().getContextMap().put("users", pageResult);

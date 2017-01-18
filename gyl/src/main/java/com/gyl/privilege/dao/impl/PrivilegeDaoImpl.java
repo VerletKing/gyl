@@ -26,4 +26,15 @@ public class PrivilegeDaoImpl extends BaseDaoImple<Privilege> implements Privile
 		return allPrivilege;
 	}
 
+	@Override
+	public List<Privilege> getPrivilegeByUidAndFlag(Long uid, Integer flag) {
+		List<Privilege> list = null;
+		if("1".equals(uid)){
+			list = this.getHibernateTemplate().find("from Privilege where type=?",flag);
+		}else{
+			list = this.getHibernateTemplate().find("from Privilege p inner join fetch p.roles r inner join fetch r.users u where type = ? and u.uid = ?",flag,uid);
+		}
+		return list;
+	}
+
 }

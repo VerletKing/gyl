@@ -7,4 +7,6 @@ import com.gyl.domain.privilege.Privilege;
 
 public interface PrivilegeService extends BaseService<Privilege>{
 	public List<Privilege> getPrivilegeByRid(Long rid);
+	public List<Privilege> getPrivilegeByUid(Long uid);
+	public List<Privilege> getfunctionByUid(Long uid);
 }

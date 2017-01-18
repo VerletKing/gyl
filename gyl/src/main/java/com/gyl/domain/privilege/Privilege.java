@@ -20,7 +20,8 @@ public class Privilege implements Serializable{
 	private String url;
 	private String target;
 	
-	
+	public static final Integer FALG_PRIVILEGE = 1;
+	public static final Integer FALG_FUNCTION = 2;
 	
 	
 	public String getUrl() {

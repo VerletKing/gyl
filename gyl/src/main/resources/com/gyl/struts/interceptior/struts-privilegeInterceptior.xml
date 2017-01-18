@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="interceptior" namespace="/" extends="struts-default">
+		<interceptors>
+			<interceptor name="privilegeInterceptior" class="com.gyl.privilege.interceptior.PrivilegeInterceptior"/>
+			<interceptor-stack name="privilegeInterceptiorStack">
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="privilegeInterceptior"/>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="privilegeInterceptiorStack"/>
+		<global-results>
+			<result name="privilege_error">/privilegeError.jsp</result>
+		</global-results>
+	</package>
+</struts>

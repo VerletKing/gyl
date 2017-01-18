@@ -5,10 +5,12 @@ import java.util.Set;
 
 import javax.annotation.Resource;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import com.gyl.base.action.BaseAction;
+import com.gyl.domain.baseData.User;
 import com.gyl.domain.privilege.Privilege;
 import com.gyl.domain.privilege.Role;
 import com.gyl.privilege.service.PrivilegeService;
@@ -42,10 +44,20 @@ public class PrivilegeAction extends BaseAction<Privilege>{
 	
 	public String savePrivilege(){
 		Role role = roleService.getEntryById(rid);
-		Set<Privilege> privileges = privilegeService.getEntriesByIds(checkedStr.split(","));
+		Set<Privilege> privileges = null;
+		if(StringUtils.isNotBlank(checkedStr)){
+			privileges = privilegeService.getEntriesByIds(checkedStr.split(","));
+		}
 		role.setPrivileges(privileges);
 		roleService.update(role);
 		ActionContext.getContext().getValueStack().push("success");
+		return SUCCESS;
+	}
+	
+	public String showMenuitemTree(){
+		User user = (User) this.getSession().getAttribute("user");
+		List<Privilege> list = privilegeService.getPrivilegeByUid(user.getUid());
+		ActionContext.getContext().getValueStack().push(list);
 		return SUCCESS;
 	}
 

@@ -1,6 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/jsp/gyl/common/common.jspf"%>
-<link rel="stylesheet" href="${proPath }/zTreeStyle/zTreeStyle.css" type="text/css">
+<link rel="stylesheet" href="${proPath }/style/zTreeStyle/zTreeStyle.css" type="text/css">
 <script type="text/javascript" src="${proPath }/js/jquery.ztree.core.js"></script>
 <script type="text/javascript" src="${proPath }/js/menuitem.js"></script>
 

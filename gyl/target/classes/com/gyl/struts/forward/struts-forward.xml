@@ -7,6 +7,11 @@
 	<package name="forward" namespace="/" extends="struts-default">
 		<action name="forwardAction" class="com.gyl.forward.ForwardAction" method="forward">
 			<result name="role">/WEB-INF/jsp/gyl/baseData/role/role.jsp</result>
+			<result name="main">/WEB-INF/jsp/gyl/frame/main.jsp</result>
+			<result name="top">/WEB-INF/jsp/gyl/frame/top.jsp</result>
+			<result name="center">/WEB-INF/jsp/gyl/frame/center.jsp</result>
+			<result name="left">/WEB-INF/jsp/gyl/frame/left.jsp</result>
+			<result name="right">/WEB-INF/jsp/gyl/frame/right.jsp</result>
 		</action>
 	</package>
 </struts>

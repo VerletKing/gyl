@@ -18,7 +18,7 @@ a:hover{text-decoration:underline;}
 .top_right .top_input{float:right; width:120px; height:12px; border-top:1px solid #779CC9;  border-left:1px solid #779CC9; border-right:1px solid #AEC7E2; border-bottom:1px solid #AEC7E2; margin:15px 15px 0 0; padding:3px 5px;}
 .top_right .arrow{width:12px; height:12px; background:url(../images/top_arrows.png) no-repeat;position:absolute; right:22px; top:18px;}
 .top_bottom{widht:100%; height:30px; background:url(../images/top_bot_bg.png) repeat-x;}
-.top_bot_left{width:174px; height:27px; line-height:27px; background:url(../images/top_bot_logo.png) left center no-repeat; margin-left:22px; padding-left:20px; color:#FFF;}
+.top_bot_left{width:220px; height:27px; line-height:27px; background:url(../images/top_bot_logo.png) left center no-repeat; margin-left:22px; padding-left:20px; color:#FFF;}
 .top_bot_right{width:342px; overflow:hidden; float:right;  hegiht:28px; line-height:28px;}
 .top_bot_right a{margin-left:8px; display:inline-block; float:left;}
 .top_bot_right .one{width:24px; background:url(../images/top_bot_1.png) left center no-repeat; padding-left:18px;}

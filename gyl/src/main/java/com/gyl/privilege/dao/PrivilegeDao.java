@@ -7,4 +7,5 @@ import com.gyl.domain.privilege.Privilege;
 
 public interface PrivilegeDao extends BaseDao<Privilege> {
 	public List<Privilege> getPrivilegeByRid(Long rid);
+	public List<Privilege> getPrivilegeByUidAndFlag(Long uid, Integer flag);
 }

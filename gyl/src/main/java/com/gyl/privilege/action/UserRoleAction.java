@@ -5,6 +5,7 @@ import java.util.Set;
 
 import javax.annotation.Resource;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
@@ -42,7 +43,10 @@ public class UserRoleAction extends BaseAction<User>{
 	
 	public String saveRole(){
 		User user = userService.getEntryById(getModel().getUid());
-		Set<Role> roles = roleService.getEntriesByIds(checkedStr.split(","));
+		Set<Role> roles = null;
+		if(StringUtils.isNotBlank(checkedStr)){
+			roles = roleService.getEntriesByIds(checkedStr.split(","));
+		}
 		user.setRoles(roles);
 		userService.update(user);
 		ActionContext.getContext().getValueStack().push("success");
