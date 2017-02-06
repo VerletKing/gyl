@@ -10,6 +10,7 @@
 	<!-- 基础数据模块 -->
 	<include file="com/gyl/struts/baseData/struts-department.xml"></include>
 	<include file="com/gyl/struts/baseData/struts-user.xml"></include>
+	<include file="com/gyl/struts/baseData/struts-product.xml"></include>
 	
 	<!-- 权限模块 -->
 	<include file="com/gyl/struts/privilege/struts-menuitem.xml"></include>
@@ -25,4 +26,7 @@
 	
 	<!-- 拦截器 -->
 	<include file="com/gyl/struts/interceptior/struts-privilegeInterceptior.xml"></include>
+	
+	<!-- 销售管理-销售预订单 -->
+	<include file="com/gyl/struts/business/xsgl/struts-xsydd.xml"></include>
 </struts>

@@ -27,7 +27,9 @@ public abstract class BaseQuery {
 	}
 
 	public void setCurrenPage(Integer currenPage) {
-		this.currenPage = currenPage;
+		if(currenPage!=null){
+			this.currenPage = currenPage;
+		}
 	}
 
 	public Integer getPageSize() {

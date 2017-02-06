@@ -34,6 +34,7 @@ public class RoleDaoImpl extends BaseDaoImple<Role> implements RoleDao{
 	@Override
 	public List<Role> getRoleByUid(Long uid) {
 		List<Role> allRole = this.find();
+		@SuppressWarnings("unchecked")
 		List<Role> roles = this.getHibernateTemplate().find("from Role r inner join fetch r.users u where u.uid = ? ",uid);
 		for(Role role_b : roles){
 			for(Role role_a : allRole){

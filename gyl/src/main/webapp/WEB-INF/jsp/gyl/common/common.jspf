@@ -6,4 +6,5 @@
 <script src="${proPath}/js/jquery-3.1.1.js"></script>
 <script src="${proPath }/js/jquery-plugin-delete.js"></script>
 <script src="${proPath }/js/jquery-plugin-update.js"></script>
+<script src="${proPath }/js/jquery-plugin-table.js"></script>
 <script src="${proPath}/js/GylUtils.js"></script>

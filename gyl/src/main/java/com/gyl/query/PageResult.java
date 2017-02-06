@@ -4,7 +4,7 @@ import java.util.List;
 
 public class PageResult<T> {
 	
-	public static final Integer INITPAGESIZE = 3;
+	public static final Integer INITPAGESIZE = 4;
 	
 	//主表当前页
 	private Integer currenPage;

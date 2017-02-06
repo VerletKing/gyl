@@ -11,6 +11,7 @@
 				$("input[name='"+config.checkBoxName+"']").prop("checked",false);
 			}
 		});
+		//复选框全选状态或全不选状态
 		$("input[name='"+config.checkBoxName+"']").unbind("click");
 		$("input[name='"+config.checkBoxName+"']").bind("click",function(){
 			if($("input[name='"+config.checkBoxName+"']:not(:checked)").length==0){

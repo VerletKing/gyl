@@ -22,6 +22,7 @@ import org.springframework.orm.hibernate3.HibernateTemplate;
 import com.gyl.base.dao.BaseDao;
 import com.gyl.query.BaseQuery;
 import com.gyl.query.PageResult;
+import com.gyl.utils.GylUtils;
 
 public class BaseDaoImple<T> implements BaseDao<T> {
 	
@@ -55,11 +56,19 @@ public class BaseDaoImple<T> implements BaseDao<T> {
 				stringBuffer.append(" where 1=1 ");
 				Map<String, Object> map = baseQuery.getMap();
 				for (Entry<String, Object> entry : map.entrySet()) {
-					stringBuffer.append(" and "+entry.getKey()+"=:"+entry.getKey());
+					if(entry.getKey().contains(".")){
+						stringBuffer.append(" and "+entry.getKey()+"=:"+entry.getKey().split("\\.")[1]);
+					}else{
+						stringBuffer.append(" and "+entry.getKey()+"=:"+entry.getKey());
+					}
 				}
 				Query query = session.createQuery(stringBuffer.toString());
 				for (Entry<String,Object> entry : map.entrySet()) {
-					query.setParameter(entry.getKey(), entry.getValue());
+					if(entry.getKey().contains(".")){
+						query.setParameter(entry.getKey().split("\\.")[1],entry.getValue());
+					}else{
+						query.setParameter(entry.getKey(), entry.getValue());
+					}
 				}
 				query.setFirstResult((pageResult.getCurrenPage()-1)*pageResult.getPageSize());
 				query.setMaxResults(pageResult.getPageSize());
@@ -86,11 +95,19 @@ public class BaseDaoImple<T> implements BaseDao<T> {
 				stringBuffer.append(" where 1=1");
 				Map<String, Object> map = baseQuery.buildWhere();
 				for (Entry<String, Object> entry : map.entrySet()) {
-					stringBuffer.append(" and "+entry.getKey()+"=:"+entry.getKey());
+					if(entry.getKey().contains(".")){
+						stringBuffer.append(" and "+entry.getKey()+"=:"+entry.getKey().split("\\.")[1]);
+					}else{
+						stringBuffer.append(" and "+entry.getKey()+"=:"+entry.getKey());
+					}
 				}
 				Query query = session.createQuery(stringBuffer.toString());
 				for (Entry<String, Object> entry : map.entrySet()) {
-					query.setParameter(entry.getKey(), entry.getValue());
+					if(entry.getKey().contains(".")){
+						query.setParameter(entry.getKey().split("\\.")[1],entry.getValue());
+					}else{
+						query.setParameter(entry.getKey(), entry.getValue());
+					}
 				}
 				return (Long) query.uniqueResult();
 			}
@@ -149,6 +166,16 @@ public class BaseDaoImple<T> implements BaseDao<T> {
 
 	public HibernateTemplate getHibernateTemplate() {
 		return hibernateTemplate;
+	}
+
+	@Override
+	public String getDDH() {
+		List<String> list = this.getHibernateTemplate().find("select max(ddh) from "+clazz.getSimpleName()+" where ddh like '"+GylUtils.getDateToString()+"%'");
+		if(list.get(0)==null){
+			return GylUtils.getDateToString()+"0001";
+		}else{
+			return String.valueOf(Long.parseLong(list.get(0))+1);
+		}
 	}
 
 }

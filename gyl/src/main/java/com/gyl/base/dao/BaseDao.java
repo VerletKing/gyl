@@ -52,4 +52,9 @@ public interface BaseDao<T> {
 	 * 根据id删除一个
 	 */
 	public void deleteByID(Serializable id);
+	
+	/**
+	 * 得到订单号
+	 */
+	public String getDDH();
 }

@@ -13,7 +13,6 @@ import com.gyl.baseData.service.DepartmentService;
 import com.gyl.baseData.service.UserService;
 import com.gyl.domain.baseData.Department;
 import com.gyl.domain.baseData.User;
-import com.gyl.privilege.annotation.PrivilegeInfo;
 import com.gyl.query.PageResult;
 import com.gyl.query.baseData.UserQuery;
 import com.opensymphony.xwork2.ActionContext;

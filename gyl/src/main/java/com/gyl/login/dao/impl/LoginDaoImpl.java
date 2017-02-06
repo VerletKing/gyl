@@ -17,6 +17,7 @@ public class LoginDaoImpl implements LoginDao{
 
 	@Override
 	public User authentication(String userName, String password) {
+		@SuppressWarnings("unchecked")
 		List<User> list = hibernateTemplate.find("from User where userName = ? and password = ?",userName,password);
 		if(list.size()==0){
 			return null;

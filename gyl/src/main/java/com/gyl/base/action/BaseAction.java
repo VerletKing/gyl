@@ -66,14 +66,4 @@ public class BaseAction<T> extends ActionSupport implements ModelDriven<T> {
 	public void setIds(Integer[] ids) {
 		this.ids = ids;
 	}
-
-	public T getT() {
-		return t;
-	}
-
-	public void setT(T t) {
-		this.t = t;
-	}
-	
-	
 }

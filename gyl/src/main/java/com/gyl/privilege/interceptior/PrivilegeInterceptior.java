@@ -1,7 +1,5 @@
 package com.gyl.privilege.interceptior;
 
-import java.lang.annotation.Annotation;
-import java.lang.reflect.Method;
 import java.util.List;
 
 import org.apache.commons.lang.StringUtils;
@@ -19,10 +17,11 @@ public class PrivilegeInterceptior extends MethodFilterInterceptor{
 
 	@Override
 	protected String doIntercept(ActionInvocation invocation) throws Exception {
+		@SuppressWarnings("unchecked")
 		List<Privilege> functions = (List<Privilege>) ServletActionContext.getRequest().getSession().getAttribute("functions");
 		
 		//获取访问目标方法的注解的name属性的值
-		Class targetClass = invocation.getAction().getClass();
+		Class<?> targetClass = invocation.getAction().getClass();
 		String methodName = invocation.getProxy().getMethod();
 		String accessMethod = AnnotationParse.parse(targetClass, methodName);
 		

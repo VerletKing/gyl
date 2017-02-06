@@ -14,6 +14,7 @@ public class PrivilegeDaoImpl extends BaseDaoImple<Privilege> implements Privile
 	@Override
 	public List<Privilege> getPrivilegeByRid(Long rid) {
 		List<Privilege> allPrivilege = this.find();
+		@SuppressWarnings("unchecked")
 		List<Privilege> privileges = getHibernateTemplate().find("from Privilege p inner join fetch p.roles r where r.rid=?",rid);
 		for(Privilege privilege_b : privileges){
 			for(Privilege privilege_a : allPrivilege){
@@ -26,6 +27,7 @@ public class PrivilegeDaoImpl extends BaseDaoImple<Privilege> implements Privile
 		return allPrivilege;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Privilege> getPrivilegeByUidAndFlag(Long uid, Integer flag) {
 		List<Privilege> list = null;
