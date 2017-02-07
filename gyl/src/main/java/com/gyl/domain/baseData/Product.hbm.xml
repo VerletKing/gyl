@@ -13,7 +13,7 @@
 		<!-- 
 			单位
 		 -->
-		<property name="dw" length="50"></property>
+		<property name="jldw" length="50"></property>
 		<property name="spmc" length="100"></property>
 		<property name="xh" length="100"></property>
 		<property name="shulv"></property>

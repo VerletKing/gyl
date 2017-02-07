@@ -86,7 +86,7 @@
                     <td field="spmc">商品名称</td>
                     <td field="spbm">商品编码</td>
                     <td field="xh">型号</td>
-                    <td field="dw">单位</td>
+                    <td field="jldw">单位</td>
                     <td field="sl">数量</td>
                     <td field="shulv">税率</td>
                     <td field="dpkl">单品扣率</td>
@@ -121,7 +121,7 @@
 	                        			 	<td width="500" item="spmc">商品名称</td>
 						                    <td width="300" item="xh">商品型号</td>
 						                    <td width="300" item="spbm">商品编码</td>
-											<td width="300" item="dw">商品单位</td>
+											<td width="300" item="jldw">商品单位</td>
 											<td width="300" item="shulv">税率</td>
 										</tr>
 	                        		</table>
@@ -134,7 +134,7 @@
                     </td>
                     <td style="border-collapse:collapse;  empty-cells:show;" item="spbm"><input readonly="readonly" type="text" style="width:100%;" name="xsyddzhibs[0].spbm"/></td>
                     <td style="border-collapse:collapse;  empty-cells:show;" item="xh"><input readonly="readonly" type="text" style="width:100%;" name="xsyddzhibs[0].xh"/></td>
-                    <td style="border-collapse:collapse;  empty-cells:show;" item="dw"><input readonly="readonly" type="text" style="width:100%;" name="xsyddzhibs[0].dw"/></td>
+                    <td style="border-collapse:collapse;  empty-cells:show;" item="jldw"><input readonly="readonly" type="text" style="width:100%;" name="xsyddzhibs[0].jldw"/></td>
                     <td style="border-collapse:collapse;  empty-cells:show;" item="sl"><input type="text" style="width:100%;" name="xsyddzhibs[0].sl"/></td>
                     <td style="border-collapse:collapse;  empty-cells:show;" item="shulv"><input readonly="readonly" type="text" style="width:100%;" name="xsyddzhibs[0].shulv"/></td>
                     <td style="border-collapse:collapse;  empty-cells:show;" item="dpkl"><input type="text" style="width:100%;" name="xsyddzhibs[0].dpkl"/></td>

@@ -10,7 +10,7 @@ public class Product implements Serializable{
 	private String spmc; //商品名称
 	private String xh;//型号
 	private String spbm;//商品编码
-	private String dw;//单位
+	private String jldw;//单位
 	private Double shulv;//税率
 	
 	
@@ -45,12 +45,11 @@ public class Product implements Serializable{
 	public void setPid(Long pid) {
 		this.pid = pid;
 	}
-	
-	public String getDw() {
-		return dw;
+	public String getJldw() {
+		return jldw;
+	}
+	public void setJldw(String jldw) {
+		this.jldw = jldw;
 	}
 	
-	public void setDw(String dw) {
-		this.dw = dw;
-	}
 }

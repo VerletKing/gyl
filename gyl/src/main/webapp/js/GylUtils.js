@@ -137,7 +137,7 @@ var GylUtils = {
 					//无税单价
 					var wsdj = $(this).val();
 					//含税单价
-					var hsdj = parseFloat(wsdj)*(1+parseFloat(shulv));
+					var hsdj = Math.floor(parseFloat(wsdj)*(1+parseFloat(shulv))*100)/100;
 					$(this).parent().siblings("td[item='hsdj']").children("input").attr("value",hsdj);
 					//无税金额
 					var wsje = parseInt(sl)*parseFloat(wsdj);
