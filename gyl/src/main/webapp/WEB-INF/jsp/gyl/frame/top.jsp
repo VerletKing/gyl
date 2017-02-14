@@ -70,7 +70,7 @@ window.onload = function(){
     </div>
     <div class="top_bottom">
     	<div class="top_bot_right">
-        	<a href="#" class="one">注销</a><a href="#" class="two">快速切换</a><a href="#" class="three">日志</a><a href="#" class="four">在线支持</a><a href="#" class="five">帮助<span></span></a>
+        	<a href="loginAction_logOut.action" class="one">注销</a><a href="#" class="two">快速切换</a><a href="#" class="three">日志</a><a href="#" class="four">在线支持</a><a href="#" class="five">帮助<span></span></a>
         </div>
         <div class="top_bot_left">
         	${sessionScope.user.userName },您好！

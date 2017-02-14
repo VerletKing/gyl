@@ -14,6 +14,7 @@ body {
 }
 -->
 </style>
+
 <script type="text/JavaScript">
 
 function MM_preloadimages() { //v3.0
@@ -77,10 +78,13 @@ window.onload = function(){
 		}
 	}
 }
+if(window != window.parent){
+	window.parent.location.reload();
+}
 </script>
 </head>
 
-<body onLoad="MM_preloadimages('images/login/login_09_1.gif','images/login/login_10_1.gif')">
+<body>
 <s:form action="loginAction_authentication.action" method="post" namespace="/">
 <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
   <tr>

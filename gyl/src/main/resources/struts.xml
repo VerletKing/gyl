@@ -27,6 +27,11 @@
 	<!-- 拦截器 -->
 	<include file="com/gyl/struts/interceptior/struts-privilegeInterceptior.xml"></include>
 	
-	<!-- 销售管理-销售预订单 -->
+	<!-- 销售管理 -->
+	<!--          销售预订单 -->
 	<include file="com/gyl/struts/business/xsgl/struts-xsydd.xml"></include>
+	<!--          销售订单 -->
+	<include file="com/gyl/struts/business/xsgl/struts-xsdd.xml"></include>
+	<!--          销售发货单 -->
+	<include file="com/gyl/struts/business/xsgl/struts-xsfhd.xml"></include>
 </struts>

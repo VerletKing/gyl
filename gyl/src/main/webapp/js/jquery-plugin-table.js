@@ -32,6 +32,21 @@
 				$td.text(data[$(field).attr("item")])
 			}
 			return $td;
+		},
+		
+		tdAppendText:function(){
+			if($(this).children("input").length==0){
+				var text = $(this).text();
+				var $input = $("<input/>").prop("type","text");
+				$(this).empty().append($input);
+				$input.focus();
+				$input.prop("value",text);
+			}
+		},
+		textBlur:function(){
+			 var value = $(this).val()
+			 $(this).parent().empty().text(value);
+			 return value;
 		}
 		
 	}

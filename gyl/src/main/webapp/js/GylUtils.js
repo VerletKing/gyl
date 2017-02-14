@@ -70,6 +70,58 @@ var GylUtils = {
 			 xsyddzhubid:'',
 			 hidden:''
 		 },
+		 update:{
+			 updatezhub:function(){
+				 if("行关闭"==$("td[item='hstatus_zhi']").text()){
+					 alert("销售订单已经完成，不能修改。")
+				 }else{
+					 $.fn.GridPanel.tdAppendText.call(this);
+				 }
+			 },
+			 updatezhib:function(){
+				 if("行关闭"==$("td[item='hstatus_zhi']").text()){
+					 alert("销售订单已经完成，不能修改。")
+				 }else{
+					 $.fn.GridPanel.tdAppendText.call(this);
+				 }
+			 },
+			 textBlur:function(){
+				 var filed = $(this).parent("td").attr("item");
+				 var value = $.fn.GridPanel.textBlur.call(this);
+				 var ddh = $(".inp").children("input").val();
+				 var param = {
+						 filed:filed,
+						 value:value,
+						 ddh:ddh
+				 }
+				 if("zhi"==filed.split("_")[1]){
+					 var hh = $("td[item='hh_zhi']").text();
+					 param.hh = hh;
+				 }
+				 $.post("xsddJsonAction_udpateXsdd.action",param,function(data){
+					 if("success"==data){
+						 alert("修改成功。")
+					 }else{
+						 alert("修改失败，请稍后再试。")
+					 }
+				 })
+			 },
+			 initEvent:function(){
+				 $("td[item$='zhu']").unbind("click");
+				 $("td[item$='zhu']").bind("click",function(){
+					 GylUtils.business.update.updatezhub.call(this);
+				 });
+				 
+				 $("td[item$='zhi']").unbind("click");
+				 $("td[item$='zhi']").bind("click",function(){
+					 GylUtils.business.update.updatezhib.call(this);
+				 });
+				 
+				 $("td[item]").delegate("input","blur",function(){
+					 GylUtils.business.update.textBlur.call(this);
+				 })
+			 }
+		 },
 		 add:{
 			rMenuClick:function(){
 				$("#addRow").unbind("click");

@@ -15,7 +15,6 @@ import com.gyl.domain.business.xsgl.Xsyddzhub;
 import com.gyl.query.PageResult;
 import com.gyl.query.business.xsgl.XsyddzhibQuery;
 import com.gyl.query.business.xsgl.XsyddzhubQuery;
-import com.gyl.utils.GylUtils;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -51,7 +50,7 @@ public class XsyddAction extends ActionSupport{
 		Xsyddzhub xsyddzhub = new Xsyddzhub();
 		BeanUtils.copyProperties(this.query_zhub, xsyddzhub);
 		xsyddzhub.setDdh(xsyddService.getDDH());
-		xsyddzhub.setXsyddzhibs(new HashSet(this.xsyddzhibs));
+		xsyddzhub.setXsyddzhibs(new HashSet<Xsyddzhib>(this.xsyddzhibs));
 		xsyddService.savePageResult_zhu(xsyddzhub);
 		return "add";
 	}

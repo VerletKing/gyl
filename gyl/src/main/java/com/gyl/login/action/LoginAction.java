@@ -13,7 +13,6 @@ import com.gyl.domain.baseData.User;
 import com.gyl.domain.privilege.Privilege;
 import com.gyl.login.service.LoginService;
 import com.gyl.privilege.service.PrivilegeService;
-import com.opensymphony.xwork2.ActionContext;
 
 @Controller
 @Scope("prototype")
@@ -44,7 +43,6 @@ public class LoginAction extends BaseAction<User>{
 		if(session != null){
 			session.removeAttribute("user");
 		}
-		ActionContext.getContext().getValueStack().push("success");
-		return SUCCESS;
+		return "login";
 	}
 }
